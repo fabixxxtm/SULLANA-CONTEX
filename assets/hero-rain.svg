@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" fill="none">
+  <rect width="800" height="420" fill="#1e3a5f"/>
+  <ellipse cx="200" cy="80" rx="120" ry="50" fill="#2c5282" opacity="0.8"/>
+  <ellipse cx="350" cy="60" rx="100" ry="45" fill="#3182ce" opacity="0.7"/>
+  <ellipse cx="500" cy="90" rx="130" ry="55" fill="#2c5282" opacity="0.8"/>
+  <ellipse cx="650" cy="70" rx="90" ry="40" fill="#3182ce" opacity="0.6"/>
+  <path d="M150 130l8 20M180 125l8 20M210 135l8 20M240 128l8 20M270 132l8 20M300 126l8 20M330 134l8 20M360 129l8 20M390 133l8 20M420 127l8 20M450 131l8 20M480 128l8 20M510 135l8 20M540 126l8 20M570 132l8 20M600 129l8 20M630 134l8 20M660 127l8 20" stroke="#90cdf4" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <path d="M0 350 Q200 320 400 340 T800 330 L800 420 L0 420Z" fill="#2b6cb0"/>
+  <path d="M0 370 Q250 350 500 365 T800 355 L800 420 L0 420Z" fill="#3182ce" opacity="0.7"/>
+  <rect x="120" y="260" width="60" height="50" fill="#744210" rx="2"/>
+  <polygon points="120,260 150,230 180,260" fill="#975a16"/>
+  <rect x="130" y="280" width="15" height="20" fill="#fef3c7"/>
+  <rect x="155" y="280" width="15" height="20" fill="#fef3c7"/>
+  <rect x="300" y="270" width="50" height="40" fill="#744210" rx="2"/>
+  <polygon points="300,270 325,245 350,270" fill="#975a16"/>
+  <rect x="500" y="255" width="70" height="55" fill="#744210" rx="2"/>
+  <polygon points="500,255 535,220 570,255" fill="#975a16"/>
+  <rect x="515" y="275" width="18" height="25" fill="#fef3c7"/>
+  <rect x="545" y="275" width="18" height="25" fill="#fef3c7"/>
+  <ellipse cx="650" cy="310" rx="30" ry="8" fill="#22543d"/>
+  <rect x="645" cy="290" width="4" height="25" fill="#744210"/>
+  <circle cx="700" cy="200" r="25" fill="#fbd38d" opacity="0.3"/>
+</svg>

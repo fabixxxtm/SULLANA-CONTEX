@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sullana Context — Alerta Verde</title>
+  <meta name="description" content="Plataforma comunitaria de información, prevención y reporte ante el Fenómeno de El Niño en Sullana.">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .section-anchor{scroll-margin-top:130px}.dashboard-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1.5rem}.data-card{background:#fff;border-radius:14px;padding:1.25rem;box-shadow:0 8px 25px rgba(0,0,0,.06)}
+    .map-demo{position:relative;min-height:390px;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#dbeafe,#e0f2fe 45%,#d1fae5)}
+    .map-demo:before{content:"";position:absolute;inset:0;background:linear-gradient(25deg,transparent 48%,rgba(37,99,235,.25) 49%,rgba(37,99,235,.25) 52%,transparent 53%),linear-gradient(100deg,transparent 48%,rgba(16,185,129,.18) 49%,rgba(16,185,129,.18) 52%,transparent 53%);opacity:.9}
+    .map-label{position:absolute;background:#fff;padding:.45rem .65rem;border-radius:8px;box-shadow:0 3px 10px rgba(0,0,0,.12);font-size:.78rem;font-weight:700;z-index:2}
+    .map-point{position:absolute;width:18px;height:18px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.25);z-index:3;cursor:pointer}.map-point.high{background:#e53e3e}.map-point.medium{background:#dd6b20}.map-point.low{background:#38a169}
+    .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.stat-card{padding:1rem;border-radius:12px;background:#f7fafc;text-align:center}.stat-card strong{display:block;font-size:1.8rem}
+    .status-line{margin-top:.75rem}.hidden{display:none!important}.firebase-note{font-size:.9rem;color:#718096}.report-card img{max-height:180px;object-fit:cover}
+    .contact-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.contact-form-grid .full{grid-column:1/-1}
+    @media(max-width:800px){.dashboard-grid,.contact-form-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:1fr}.nav-list{flex-wrap:wrap}}
+  </style>
+</head>
+<body>
+  <div id="alert-banner" class="alert-banner"></div>
+
+  <header class="header">
+    <div class="container header-top">
+      <a href="#inicio" class="logo">
+        <img src="assets/logo.svg" alt="Sullana Context" class="logo-icon">
+        <div class="logo-text"><h1>SULLANA CONTEXT</h1><span>Alerta Verde — Preparados para El Niño</span></div>
+      </a>
+  
+      <button class="search-btn" id="search-btn" aria-label="Buscar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      </button>
+    </div>
+    <nav class="nav"><div class="container" style="position:relative">
+      <button class="nav-toggle" aria-label="Menú">☰</button>
+      <ul class="nav-list">
+        <li><a href="#inicio">INICIO</a></li><li><a href="#reportes">REPORTES</a></li><li><a href="#mapa">MAPA</a></li><li><a href="#comunidad">COMUNIDAD</a></li><li><a href="#recursos">RECURSOS</a></li><li><a href="#contacto">CONTACTO</a></li>
+      </ul>
+    </div></nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero section-anchor">
+      <div class="hero-bg"></div><div class="container hero-content">
+        <span class="hero-badge">🌧 Alerta Verde — Fenómeno de El Niño</span>
+        <h2>SULLANA PREPARADA ANTE EL FENÓMENO DE EL NIÑO</h2>
+        <p>Información clara, prevención, reportes ciudadanos y recursos para actuar de forma oportuna ante lluvias intensas, inundaciones y otras emergencias.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap"><a href="#recursos" class="btn btn-primary">INFÓRMATE</a><a href="#reportes" class="btn btn-danger">⚠ REPORTAR INUNDACIÓN</a></div>
+      </div>
+    </section>
+
+    <section class="section"><div class="container"><div class="section-header"><span class="section-label">Conocimiento</span><h2>¿QUÉ ES EL NIÑO?</h2></div>
+      <div class="nino-grid"><div class="nino-text"><p>El Fenómeno de El Niño es un evento climático que altera los patrones de lluvia en la costa norte del Perú.</p><p>En Sullana puede generar <strong>lluvias intensas, desbordes del río Chira, inundaciones, huaicos y afectaciones a la salud y economía local</strong>. La información oportuna ayuda a proteger a las familias.</p><a href="#recursos" class="btn btn-outline">Ver guías de prevención</a></div><div class="nino-illustration"><img src="assets/nino-illustration.svg" alt="Ilustración El Niño Costero"></div></div>
+    </div></section>
+
+    <section class="section section-alt"><div class="container"><div class="section-header"><span class="section-label">Riesgos</span><h2>IMPACTOS EN SULLANA</h2><p>Principales efectos que pueden presentarse durante eventos de lluvias intensas.</p></div>
+      <div class="impact-grid"><div class="impact-card"><img src="assets/icon-inundacion.svg" alt="Inundaciones"><h3>Inundaciones</h3><p>Daños en viviendas, calles y servicios básicos.</p></div><div class="impact-card"><img src="assets/icon-huaico.svg" alt="Huaicos"><h3>Huaicos</h3><p>Afectación de carreteras, cultivos y zonas de riesgo.</p></div><div class="impact-card"><img src="assets/icon-salud.svg" alt="Salud"><h3>Salud</h3><p>Riesgo de dengue, enfermedades respiratorias y otras afecciones.</p></div><div class="impact-card"><img src="assets/icon-economia.svg" alt="Economía"><h3>Economía</h3><p>Pérdidas en agricultura, comercio y actividades locales.</p></div></div>
+    </div></section>
+
+    <section id="reportes" class="section section-anchor"><div class="container"><div class="section-header"><span class="section-label">Participación ciudadana</span><h2>REPORTA UNA EMERGENCIA</h2><p>El sistema permite registrar, consultar y visualizar reportes de emergencias. Los datos se guardan localmente para que la página funcione desde el primer momento.</p></div>
+      <div class="form-card"><form id="reporte-form">
+        <div class="form-row"><div class="form-group"><label for="nombre">Nombre completo <span class="required">*</span></label><input id="nombre" name="nombre" required placeholder="Ej: Juan Pérez García"></div><div class="form-group"><label for="telefono">Teléfono</label><input id="telefono" name="telefono" type="tel" placeholder="Ej: 973 456 789"></div></div>
+        <div class="form-row"><div class="form-group"><label for="tipo">Tipo de afectación <span class="required">*</span></label><select id="tipo" name="tipo" required><option value="">Seleccionar...</option><option value="inundacion">Inundación</option><option value="huaico">Huaico / deslizamiento</option><option value="vivienda">Daño en vivienda</option><option value="carretera">Daño en carretera</option><option value="cultivo">Pérdida de cultivos</option><option value="otro">Otro</option></select></div><div class="form-group"><label for="severidad">Severidad <span class="required">*</span></label><select id="severidad" name="severidad" required><option value="">Seleccionar...</option><option value="alta">Alta — peligro inmediato</option><option value="media">Media — afectación moderada</option><option value="baja">Baja — situación controlada</option></select></div></div>
+        <div class="form-row"><div class="form-group"><label for="zona">Zona / sector <span class="required">*</span></label><select id="zona" name="zona" required><option value="">Seleccionar zona...</option></select></div><div class="form-group"><label for="direccion">Dirección o referencia <span class="required">*</span></label><input id="direccion" name="direccion" required placeholder="Ej: Av. Grau cdra. 3"></div></div>
+        <div class="form-group"><label>Ubicación geográfica</label><input type="hidden" id="latitud" name="latitud"><input type="hidden" id="longitud" name="longitud"><button type="button" id="geo-btn" class="geo-btn">📍 Usar mi ubicación actual</button><p class="form-hint">La ubicación solo se registra con tu permiso.</p></div>
+        <div class="form-group"><label for="descripcion">Descripción <span class="required">*</span></label><textarea id="descripcion" name="descripcion" required placeholder="Describe el nivel del agua, personas afectadas, vías bloqueadas, etc."></textarea></div>
+        <div class="form-group"><label>Evidencia fotográfica</label><div class="file-upload" id="file-upload-area"><input type="file" id="evidencia" accept="image/*"><p>Haz clic para subir una foto</p><p class="form-hint">JPG o PNG. Máximo recomendado: 5 MB.</p><img id="photo-preview" class="preview" style="display:none" alt="Vista previa"></div></div>
+        <div class="form-actions"><button type="submit" class="btn btn-danger">🚨 ENVIAR REPORTE</button><button type="reset" class="btn btn-secondary">Limpiar</button></div>
+      </form></div>
+      <div class="track-section"><h3>Seguimiento de tu reporte</h3><p class="track-desc">Ingresa el código que recibiste al enviar tu reporte.</p><form id="track-form" class="track-form"><input id="track-id" required placeholder="Ej: SUL-ABC123-XYZ"><button class="btn btn-primary">Consultar</button></form><div id="track-result" class="track-result"></div></div>
+    </div></section>
+
+    <section class="reports-section"><div class="container"><div class="section-header"><span class="section-label">Datos</span><h2>REPORTES RECIENTES</h2><p>Los reportes cargados desde Firestore aparecen aquí automáticamente.</p></div><div class="stats-grid"><div class="stat-card"><strong id="stat-total">0</strong><span>Reportes</span></div><div class="stat-card"><strong id="stat-high">0</strong><span>Severidad alta</span></div><div class="stat-card"><strong id="stat-pending">0</strong><span>Pendientes</span></div></div><div id="reports-list" class="reports-grid" style="margin-top:1.5rem"></div></div></section>
+
+    <section id="mapa" class="section section-alt section-anchor"><div class="container"><div class="section-header"><span class="section-label">Territorio</span><h2>MAPA DE RIESGO</h2><p>Vista demostrativa de zonas y reportes. Los puntos se actualizan con los reportes que tengan coordenadas.</p></div>
+      <div class="dashboard-grid"><div class="map-demo" id="map-demo"><div class="map-label" style="top:8%;left:8%">Sullana</div><div class="map-label" style="bottom:10%;right:8%">Río Chira</div><div class="map-label" style="top:42%;right:16%">El Chilcal</div></div><div class="data-card"><h3>Zonas de atención</h3><div class="zone-card riesgo-alto"><h4>El Chilcal</h4><p>Sector con historial de desbordes y anegamiento.</p></div><div class="zone-card riesgo-alto"><h4>La Banda</h4><p>Zona baja con problemas de drenaje.</p></div><div class="zone-card riesgo-medio"><h4>Querecotillo</h4><p>Área agrícola vulnerable a anegamientos.</p></div><div class="zone-card riesgo-medio"><h4>Bellavista</h4><p>Riesgo moderado ante lluvias intensas.</p></div></div></div>
+    </div></section>
+
+    <section id="comunidad" class="section section-anchor"><div class="container"><div class="section-header"><span class="section-label">Comunidad</span><h2>VOCES DE SULLANA</h2><p>La prevención mejora cuando la comunidad comparte información y participa.</p></div><div class="testimonial-grid"><div class="testimonial-card"><p class="quote">“La información local nos ayuda a prepararnos antes de que la emergencia llegue.”</p><div class="testimonial-author"><div class="author-avatar">SC</div><div class="author-info"><h4>Comunidad Sullana</h4><span>Participación ciudadana</span></div></div></div><div class="testimonial-card"><p class="quote">“Reportar una zona afectada permite identificar dónde se necesita atención.”</p><div class="testimonial-author"><div class="author-avatar">DC</div><div class="author-info"><h4>Brigadas</h4><span>Prevención y respuesta</span></div></div></div><div class="testimonial-card"><p class="quote">“La preparación empieza con conocer los riesgos de nuestro propio sector.”</p><div class="testimonial-author"><div class="author-avatar">ED</div><div class="author-info"><h4>Estudiantes</h4><span>Educación preventiva</span></div></div></div></div></div></section>
+
+    <section id="recursos" class="section section-alt section-anchor"><div class="container"><div class="section-header"><span class="section-label">Prevención</span><h2>RECURSOS Y RECOMENDACIONES</h2></div><div class="resources-grid"><div class="resource-card"><div class="resource-icon">🎒</div><h3>Antes de la lluvia</h3><p>Prepara una mochila de emergencia, documentos, agua, alimentos no perecibles, linterna y botiquín.</p></div><div class="resource-card"><div class="resource-icon">🌧️</div><h3>Durante la emergencia</h3><p>No cruces corrientes de agua ni zonas inundadas. Sigue las indicaciones oficiales y evacúa si corresponde.</p></div><div class="resource-card"><div class="resource-icon">🦟</div><h3>Después del evento</h3><p>Evita el agua estancada, usa agua segura y elimina recipientes que puedan convertirse en criaderos de mosquitos.</p></div><div class="resource-card"><div class="resource-icon">📢</div><h3>Fuentes oficiales</h3><p>Consulta información de SENAMHI, INDECI y autoridades locales antes de compartir alertas.</p></div></div><div class="section-header" style="margin-top:2rem"><h2>ACCESOS RÁPIDOS</h2></div><div class="quick-grid"><a class="quick-item" href="#reportes"><img src="assets/icon-reportes.svg" alt="Reportes"><span>REPORTES</span></a><a class="quick-item" href="#mapa"><img src="assets/icon-mapa.svg" alt="Mapa"><span>MAPA</span></a><a class="quick-item" href="#contacto"><img src="assets/icon-contacto.svg" alt="Contacto"><span>CONTACTO</span></a><a class="quick-item" href="https://www.senamhi.gob.pe" target="_blank" rel="noopener"><img src="assets/icon-recursos.svg" alt="SENAMHI"><span>SENAMHI</span></a></div></div></section>
+
+    <section id="contacto" class="section section-anchor"><div class="container"><div class="section-header"><span class="section-label">Comunicación</span><h2>CONTACTO</h2><p>Envía una consulta o sugerencia sobre la plataforma.</p></div><div class="dashboard-grid"><div class="data-card"><form id="contacto-form"><div class="contact-form-grid"><div class="form-group"><label for="contacto-nombre">Nombre</label><input id="contacto-nombre" name="nombre" required></div><div class="form-group"><label for="contacto-email">Correo</label><input id="contacto-email" name="email" type="email" required></div><div class="form-group full"><label for="contacto-asunto">Asunto</label><input id="contacto-asunto" name="asunto" required></div><div class="form-group full"><label for="contacto-mensaje">Mensaje</label><textarea id="contacto-mensaje" name="mensaje" required></textarea></div></div><button class="btn btn-primary" type="submit">Enviar mensaje</button></form></div><div class="data-card"><h3>Fuentes oficiales</h3><p><strong>SENAMHI</strong><br><a href="https://www.senamhi.gob.pe" target="_blank" rel="noopener">Información meteorológica</a></p><p><strong>INDECI</strong><br><a href="https://www.gob.pe/indeci" target="_blank" rel="noopener">Defensa Civil</a></p><p><strong>Municipalidad de Sullana</strong><br><a href="https://www.gob.pe/munisullana" target="_blank" rel="noopener">Información municipal</a></p><hr><p><strong>Emergencias:</strong> Policía 105 · Bomberos 116</p></div></div></div></section>
+  </main>
+
+  <footer class="footer"><div class="container"><div class="footer-grid"><div><h3>Sullana Context — Alerta Verde</h3><p>Plataforma comunitaria de información, prevención y reporte ante el Fenómeno de El Niño en Sullana, Piura.</p></div><div><h3>Secciones</h3><ul class="footer-links"><li><a href="#reportes">Reportes</a></li><li><a href="#mapa">Mapa</a></li><li><a href="#recursos">Recursos</a></li><li><a href="#contacto">Contacto</a></li></ul></div><div><h3>Estado del sistema</h3><p>✓ Plataforma activa y lista para registrar reportes.</p><p class="firebase-note">Firebase SDK integrado en js/firebase-config.js y js/app.js.</p></div></div><div class="footer-bottom"><p>&copy; 2026 Sullana Context — Alerta Verde.</p></div></div></footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

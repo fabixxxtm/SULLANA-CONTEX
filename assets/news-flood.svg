@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" fill="none">
+  <rect width="400" height="200" fill="#2c5282"/>
+  <path d="M0 140 Q100 120 200 135 T400 130 L400 200 L0 200Z" fill="#3182ce"/>
+  <path d="M0 155 Q120 140 240 150 T400 145 L400 200 L0 200Z" fill="#4299e1" opacity="0.7"/>
+  <rect x="80" y="100" width="40" height="35" fill="#744210"/>
+  <polygon points="80,100 100,80 120,100" fill="#975a16"/>
+  <rect x="200" y="90" width="50" height="45" fill="#744210"/>
+  <polygon points="200,90 225,65 250,90" fill="#975a16"/>
+  <path d="M50 60 Q80 40 110 60 Q140 40 170 55" stroke="#718096" stroke-width="3" fill="none"/>
+  <text x="200" y="30" text-anchor="middle" fill="#fff" font-size="14" font-family="sans-serif" font-weight="bold">Lluvias intensas en Sullana</text>
+</svg>
